@@ -45,6 +45,13 @@ The owner model contains all the information about your owners.
   <Property name="requestApprovalDeleteReason" type="string">
     Request approval delete reason.
   </Property>
+  <Property name="requestApprovalDeleteReasonReject" type="string">
+    Reason to reject request delete.
+  </Property>
+  <Property name="requestApprovalDeleteStatus" type="enum">
+    Request approval delete status
+    - enum ['pending', 'approved', 'rejected']
+  </Property>
 </Properties>
 
 ---
