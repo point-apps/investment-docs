@@ -317,16 +317,16 @@ The bank model contains all the information about your banks.
 
 ---
 
-## Archive a bank {{ tag: 'PATCH', label: '/v1/banks/:id/archive' }}
+## Archive a bank {{ tag: 'POST', label: '/v1/banks/:id/archive' }}
 
 <Row>
   <Col>
     This endpoint allows you to patch banks from your bank list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/archive">
+    <CodeGroup title="Request" tag="POST" label="/v1/banks/:id/archive">
     ```typescript {{ title: 'axios' }}
-    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf/archive')
+    const response = axios.post('/v1/banks/637d83d15d2be122007524bf/archive')
     ```
     </CodeGroup>
     <CodeGroup title="Response">
@@ -339,16 +339,16 @@ The bank model contains all the information about your banks.
 
 ---
 
-## Restore a bank {{ tag: 'PATCH', label: '/v1/banks/:id/restore' }}
+## Restore a bank {{ tag: 'POST', label: '/v1/banks/:id/restore' }}
 
 <Row>
   <Col>
     This endpoint allows you to patch banks from your bank list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/restore">
+    <CodeGroup title="Request" tag="POST" label="/v1/banks/:id/restore">
     ```typescript {{ title: 'axios' }}
-    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf/restore')
+    const response = axios.post('/v1/banks/637d83d15d2be122007524bf/restore')
     ```
     </CodeGroup>
     <CodeGroup title="Response">
@@ -361,16 +361,16 @@ The bank model contains all the information about your banks.
 
 ---
 
-## Request to delete the bank {{ tag: 'PATCH', label: '/v1/banks/:id/request-delete' }}
+## Request to delete the bank {{ tag: 'POST', label: '/v1/banks/:id/request-delete' }}
 
 <Row>
   <Col>
     This endpoint allows you to delete banks from your bank list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/request-delete">
+    <CodeGroup title="Request" tag="POST" label="/v1/banks/:id/request-delete">
     ```typescript {{ title: 'axios' }}
-    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf/request-delete', {
+    const response = axios.post('/v1/banks/637d83d15d2be122007524bf/request-delete', {
       approvalTo: '',
       reasonDelete: '',
     })
@@ -386,16 +386,16 @@ The bank model contains all the information about your banks.
 
 ---
 
-## Approve request to delete the bank {{ tag: 'PATCH', label: '/v1/banks/:id/request-delete/approve' }}
+## Approve request to delete the bank {{ tag: 'POST', label: '/v1/banks/:id/request-delete/approve' }}
 
 <Row>
   <Col>
     This endpoint allows you to approve request delete banks from your bank list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/request-delete/approve">
+    <CodeGroup title="Request" tag="POST" label="/v1/banks/:id/request-delete/approve">
     ```typescript {{ title: 'axios' }}
-    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf/request-delete/approve')
+    const response = axios.post('/v1/banks/637d83d15d2be122007524bf/request-delete/approve')
     ```
     </CodeGroup>
     <CodeGroup title="Response">
@@ -408,16 +408,16 @@ The bank model contains all the information about your banks.
 
 ---
 
-## Reject request to delete the bank {{ tag: 'PATCH', label: '/v1/banks/:id/request-delete/reject' }}
+## Reject request to delete the bank {{ tag: 'POST', label: '/v1/banks/:id/request-delete/reject' }}
 
 <Row>
   <Col>
     This endpoint allows you to reject request delete banks from your bank list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/request-delete/reject">
+    <CodeGroup title="Request" tag="POST" label="/v1/banks/:id/request-delete/reject">
     ```typescript {{ title: 'axios' }}
-    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf', {
+    const response = axios.post('/v1/banks/637d83d15d2be122007524bf', {
       reasonReject: ""
     })
     ```
