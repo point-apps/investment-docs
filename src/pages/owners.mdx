@@ -326,10 +326,10 @@ The owner model contains all the information about your owners.
 
 <Row>
   <Col>
-    This endpoint allows you to delete owners from your owner list.
+    This endpoint allows you to approve request delete owners from your owner list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="POST" label="/v1/owners/:id">
+    <CodeGroup title="Request" tag="POST" label="/v1/owners/:id/request-delete/approve">
     ```typescript {{ title: 'axios' }}
     const response = axios.post('/v1/owners/637d83d15d2be122007524bf/request-delete/approve')
     ```
@@ -348,7 +348,7 @@ The owner model contains all the information about your owners.
 
 <Row>
   <Col>
-    This endpoint allows you to delete owners from your owner list.
+    This endpoint allows you to reject request delete owners from your owner list.
   </Col>
   <Col sticky>
     <CodeGroup title="Request" tag="POST" label="/v1/owners/:id/request-delete/reject">
