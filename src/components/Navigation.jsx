@@ -198,9 +198,9 @@ export const navigation = [
   {
     title: 'Resources',
     links: [
-      { title: 'Permissions', href: '/permissions' },
-      { title: 'Roles', href: '/roles' },
-      { title: 'Users', href: '/users' },
+      // { title: 'Permissions', href: '/permissions' },
+      // { title: 'Roles', href: '/roles' },
+      // { title: 'Users', href: '/users' },
       { title: 'Owners', href: '/owners' },
       { title: 'Banks', href: '/banks' },
     ],

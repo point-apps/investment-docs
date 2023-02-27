@@ -36,6 +36,15 @@ The owner model contains all the information about your owners.
   <Property name="archivedAt" type="timestamp">
     Timestamp of when the owner was archived.
   </Property>
+  <Property name="requestApprovalDeleteTo_id" type="objectId">
+    User identifier who request to delete the owner.
+  </Property>
+  <Property name="requestApprovalDeleteAt" type="timestamp">
+    Timestamp of when the user request to delete the owner.
+  </Property>
+  <Property name="requestApprovalDeleteReason" type="string">
+    Request approval delete reason.
+  </Property>
 </Properties>
 
 ---
@@ -279,17 +288,18 @@ The owner model contains all the information about your owners.
 
 ---
 
-## Request to delete the owner {{ tag: 'PATCH', label: '/v1/owners/:id' }}
+## Request to delete the owner {{ tag: 'PATCH', label: '/v1/owners/:id/request-delete' }}
 
 <Row>
   <Col>
-    This endpoint allows you to delete owners from your owner list.
+    This endpoint allows you to request delete owners from your owner list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="PATCH" label="/v1/owners/:id">
+    <CodeGroup title="Request" tag="PATCH" label="/v1/owners/:id/request-delete">
     ```typescript {{ title: 'axios' }}
-    const response = axios.post('/v1/owners/637d83d15d2be122007524bf', {
-      approvalTo: ''
+    const response = axios.patch('/v1/owners/637d83d15d2be122007524bf/request-delete', {
+      approvalTo: '',
+      reasonDelete: '',
     })
     ```
     </CodeGroup>
@@ -303,7 +313,7 @@ The owner model contains all the information about your owners.
 
 ---
 
-## Approve request to delete the owner {{ tag: 'PATCH', label: '/v1/owners/:id' }}
+## Approve request to delete the owner {{ tag: 'PATCH', label: '/v1/owners/:id/request-delete/approve' }}
 
 <Row>
   <Col>
@@ -312,7 +322,7 @@ The owner model contains all the information about your owners.
   <Col sticky>
     <CodeGroup title="Request" tag="PATCH" label="/v1/owners/:id">
     ```typescript {{ title: 'axios' }}
-    const response = axios.delete('/v1/owners/637d83d15d2be122007524bf')
+    const response = axios.patch('/v1/owners/637d83d15d2be122007524bf/request-delete/approve')
     ```
     </CodeGroup>
     <CodeGroup title="Response">
@@ -325,17 +335,17 @@ The owner model contains all the information about your owners.
 
 ---
 
-## Reject request to delete the owner {{ tag: 'PATCH', label: '/v1/owners/:id' }}
+## Reject request to delete the owner {{ tag: 'PATCH', label: '/v1/owners/:id/request-delete/reject' }}
 
 <Row>
   <Col>
     This endpoint allows you to delete owners from your owner list.
   </Col>
   <Col sticky>
-    <CodeGroup title="Request" tag="PATCH" label="/v1/owners/:id">
+    <CodeGroup title="Request" tag="PATCH" label="/v1/owners/:id/request-delete/reject">
     ```typescript {{ title: 'axios' }}
-    const response = axios.post('/v1/owners/637d83d15d2be122007524bf', {
-      reasonDelete: ""
+    const response = axios.patch('/v1/owners/637d83d15d2be122007524bf/request-delete/reject', {
+      reasonReject: ""
     })
     ```
     </CodeGroup>

@@ -71,6 +71,15 @@ The bank model contains all the information about your banks.
   <Property name="archivedAt" type="timestamp">
     Timestamp of when the bank was archived.
   </Property>
+  <Property name="requestApprovalDeleteTo_id" type="objectId">
+    User identifier who request to delete the owner.
+  </Property>
+  <Property name="requestApprovalDeleteAt" type="timestamp">
+    Timestamp of when the user request to delete the owner.
+  </Property>
+  <Property name="requestApprovalDeleteReason" type="string">
+    Request approval delete reason.
+  </Property>
 </Properties>
 
 ---
@@ -355,8 +364,9 @@ The bank model contains all the information about your banks.
   <Col sticky>
     <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/request-delete">
     ```typescript {{ title: 'axios' }}
-    const response = axios.post('/v1/banks/637d83d15d2be122007524bf', {
-      approvalTo: ''
+    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf/request-delete', {
+      approvalTo: '',
+      reasonDelete: '',
     })
     ```
     </CodeGroup>
@@ -374,12 +384,12 @@ The bank model contains all the information about your banks.
 
 <Row>
   <Col>
-    This endpoint allows you to delete banks from your bank list.
+    This endpoint allows you to approve request delete banks from your bank list.
   </Col>
   <Col sticky>
     <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/request-delete/approve">
     ```typescript {{ title: 'axios' }}
-    const response = axios.delete('/v1/banks/637d83d15d2be122007524bf')
+    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf/request-delete/approve')
     ```
     </CodeGroup>
     <CodeGroup title="Response">
@@ -396,13 +406,13 @@ The bank model contains all the information about your banks.
 
 <Row>
   <Col>
-    This endpoint allows you to delete banks from your bank list.
+    This endpoint allows you to reject request delete banks from your bank list.
   </Col>
   <Col sticky>
     <CodeGroup title="Request" tag="PATCH" label="/v1/banks/:id/request-delete/reject">
     ```typescript {{ title: 'axios' }}
-    const response = axios.post('/v1/banks/637d83d15d2be122007524bf', {
-      reasonDelete: ""
+    const response = axios.patch('/v1/banks/637d83d15d2be122007524bf', {
+      reasonReject: ""
     })
     ```
     </CodeGroup>
